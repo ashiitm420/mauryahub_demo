@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-541494611294190"
+        crossorigin="anonymous"></script>
+    <title>General Resources</title>
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* ═══════════════════════════════════════════════
+   TOKENS — Warm Academic (Light Mode)
+═══════════════════════════════════════════════ */
+:root {
+    --bg:          #f6efe2;
+    --surface:     #fffdf8;
+    --surface-2:   #f1e7d4;
+    --surface-3:   #eee3d1;
+    --card:        #fffdf8;
+    --hover:       #f3ead8;
+    --border:      #ddccae;
+    --border-md:   #c9b487;
+    --text:        #2c2115;
+    --text-muted:  #5c4a34;
+    --text-dim:    #93805f;
+    --accent:      #1f4d3c;
+    --accent-2:    #6b1f2a;
+    --accent-soft: rgba(31,77,60,0.14);
+    --accent-weak: rgba(31,77,60,0.08);
+    --danger:      #8c2b2b;
+    --danger-soft: rgba(140,43,43,0.12);
+    --success:     #2f6b3a;
+    --success-soft: rgba(47,107,58,0.12);
+    --shadow-warm: rgba(66,46,20,0.14);
+    --r-sm: 8px; --r: 12px; --r-lg: 18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f6efe2 0%, #efe4cc 100%);
+    overflow-x: hidden;
+}
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ── LAYOUT ─────────────────────────────────── */
+.page { max-width: 1900px; margin: 0 auto; padding: 6px 12px 30px; width: min(98vw, 1900px); position: relative; }
+
+/* ── TOP NAV ─────────────────────────────────── */
+.top-nav {
+    display: flex; gap: 5px; flex-wrap: wrap;
+    padding: 6px 8px; border-radius: var(--r);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    backdrop-filter: blur(8px);
+    margin-bottom: 12px;
+    box-shadow: 0 8px 18px var(--shadow-warm);
+    position: relative;
+}
+.top-nav a {
+    text-decoration: none; color: var(--text-muted);
+    padding: 5px 10px; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 600;
+    border: 1px solid transparent;
+    transition: color .16s, border-color .16s, background .16s;
+}
+.top-nav a:hover { color: var(--text); border-color: var(--border); background: var(--surface-2); }
+.top-nav a.cta-link {
+    color: #fffdf8;
+    background: linear-gradient(135deg, #8a3a2a, #6b1f2a);
+    border-color: rgba(107, 31, 42, 0.28);
+    box-shadow: 0 10px 20px rgba(107, 31, 42, 0.22);
+}
+.top-nav a.cta-link:hover {
+    color: #fffdf8;
+    border-color: rgba(107, 31, 42, 0.3);
+    background: linear-gradient(135deg, #9a4530, #6b1f2a);
+}
+.top-nav .contributors-link {
+    color: #1f4d3c;
+    background: #e4ede4;
+    border-color: #bfd6bd;
+    cursor: pointer;
+    font: inherit;
+}
+.top-nav .contributors-link:hover { color: #16362a; background: #cfe0cd; }
+.top-contributors-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.top-contributors-heading h2 { font-size: 0.95rem; color: var(--text); font-family: 'Source Serif 4', serif; }
+.top-contributors-heading span { color: var(--text-dim); font-size: 0.7rem; }
+.top-contributors-list {
+    column-count: 2;
+    column-gap: 10px;
+    margin-top: 9px;
+    padding: 0;
+    list-style: none;
+    counter-reset: contributor-rank;
+}
+.top-contributors-list li {
+    display: flex; align-items: center; gap: 10px; min-width: 0; padding: 9px 12px; background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: var(--r-sm); transition: transform .18s ease, border-color .18s ease;
+    min-height: 50px;
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 10px;
+    -webkit-column-break-inside: avoid;
+}
+.top-contributors-list li:nth-child(1) {
+    background: linear-gradient(180deg, rgba(255, 222, 125, 0.6), rgba(255, 204, 68, 0.22));
+    border-color: rgba(186, 137, 0, 0.5);
+    box-shadow: 0 6px 18px rgba(214, 160, 8, 0.18);
+}
+.top-contributors-list li:nth-child(2) {
+    background: linear-gradient(180deg, rgba(216, 220, 224, 0.62), rgba(164, 170, 175, 0.2));
+    border-color: rgba(120, 125, 130, 0.48);
+    box-shadow: 0 6px 18px rgba(147, 150, 154, 0.12);
+}
+.top-contributors-list li:nth-child(3) {
+    background: linear-gradient(180deg, rgba(224, 176, 122, 0.58), rgba(180, 117, 58, 0.2));
+    border-color: rgba(149, 93, 35, 0.45);
+    box-shadow: 0 6px 18px rgba(166, 101, 48, 0.12);
+}
+.top-contributors-list li:nth-child(n+4) {
+    min-height: 44px;
+    padding: 7px 10px;
+}
+.top-contributors-list li:nth-child(n+4) strong {
+    font-size: 0.92rem;
+}
+.top-contributors-list li:nth-child(n+4) > span:last-child {
+    font-size: 0.68rem;
+}
+.top-contributors-list strong {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-size: 0.98rem;
+}
+.contributor-name-button {
+    border: 0; padding: 0; background: transparent; color: inherit;
+    font: inherit; font-weight: inherit; cursor: pointer; text-align: left;
+}
+.contributor-name-button:hover { text-decoration: underline; }
+.top-contributors-list li > span:last-child {
+    margin-left: auto; color: var(--text-muted); font-size: 0.72rem; white-space: nowrap;
+    flex-shrink: 0;
+}
+.contributor-rank {
+    display: inline-grid; place-items: center; width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%;
+    color: #2c2115; background: var(--surface-3); font-size: 0.72rem; font-weight: 800;
+    box-shadow: inset 0 0 0 1px rgba(44, 33, 21, 0.08);
+}
+.top-contributors-list li:nth-child(1) .contributor-rank { background: linear-gradient(135deg, #f7d154, #d89f00); }
+.top-contributors-list li:nth-child(2) .contributor-rank { background: linear-gradient(135deg, #e4e8eb, #b7bcc2); }
+.top-contributors-list li:nth-child(3) .contributor-rank { background: linear-gradient(135deg, #e7c19b, #bc7f3d); }
+.top-contributors-empty { margin-top: 8px; color: var(--text-muted); font-size: 0.78rem; }
+.contributors-panel { height: auto; max-height: min(84vh, 750px); }
+.contributors-panel .top-contributors-list { max-height: 62vh; overflow: auto; }
+.contributor-resource-list { list-style: none; margin: 10px 0 0; padding: 0; max-height: 62vh; overflow: auto; }
+.contributor-resource-list li {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--r-sm);
+    background: var(--surface-2); margin-bottom: 8px;
+}
+.contributor-resource-list strong, .contributor-resource-list small { display: block; }
+.contributor-resource-list strong { color: var(--text); font-size: .82rem; }
+.contributor-resource-list small { color: var(--text-dim); font-size: .68rem; margin-top: 3px; }
+.contributor-resource-list li > span { display: flex; gap: 8px; flex-shrink: 0; }
+.contributor-resource-list a { color: var(--accent); font-size: .7rem; font-weight: 700; }
+.theme-toggle { margin-left:auto; border:1px solid var(--border); border-radius:999px; padding:5px 10px; background:var(--surface-2); color:var(--text); font:inherit; font-size:.76rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+.theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ═══════════════════════════════════════════════
+   DARK MODE — Crisp Cyberpunk Neon Theme
+═══════════════════════════════════════════════ */
+body.dark-theme { 
+    --bg: #010610; 
+    --surface: rgba(0, 10, 20, 0.6); 
+    --surface-2: rgba(0, 229, 255, 0.05); 
+    --surface-3: rgba(0, 229, 255, 0.1); 
+    --card: rgba(0, 5, 12, 0.8); 
+    --hover: rgba(0, 229, 255, 0.1); 
+    --border: #004d66; 
+    --border-md: rgba(0, 229, 255, 0.4); 
+    --text: #e0fcf5; 
+    --text-muted: #8cd9d9; 
+    --text-dim: #4d9999; 
+    --accent: #00e5ff; 
+    --accent-2: #00ff44; 
+    --accent-soft: rgba(0, 229, 255, 0.15); 
+    --accent-weak: rgba(0, 229, 255, 0.08); 
+    --shadow-warm: rgba(0, 0, 0, 0.5); 
+    
+    background: radial-gradient(circle at 50% 0%, #001f33 0%, #000205 100%); 
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Restrict intense text glow to headers to save eye strain */
+body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, 
+body.dark-theme .resource-title {
+    color: #ccffeb;
+    text-shadow: 0 0 15px rgba(0, 255, 68, 0.8);
+    letter-spacing: 0.02em;
+}
+
+/* Full Width Glowing Laser Lines */
+body.dark-theme .page-header::after,
+body.dark-theme .filter-zone::after,
+body.dark-theme .subject-zone::before,
+body.dark-theme .subject-zone::after {
+    content: '';
+    position: absolute;
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    height: 1px;
+    background: #00e5ff;
+    box-shadow: 0 0 10px 2px rgba(0, 229, 255, 0.5);
+    z-index: -1;
+    pointer-events: none;
+}
+body.dark-theme .page-header::after { bottom: -12px; }
+body.dark-theme .filter-zone::after { top: 50%; }
+body.dark-theme .subject-zone::before { top: -10px; }
+body.dark-theme .subject-zone::after { bottom: -10px; }
+
+/* Structural blocks - Removed harsh backgrounds */
+body.dark-theme .page-header, body.dark-theme .top-nav, 
+body.dark-theme .tab-strip, body.dark-theme .subject-zone {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Top nav links get a neon pill outline like the reference screenshot */
+body.dark-theme .top-nav a {
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    color: #b8fff2;
+    background: rgba(0, 229, 255, 0.04);
+}
+body.dark-theme .top-nav a:hover {
+    border-color: #00e5ff;
+    color: #eafffb;
+    background: rgba(0, 229, 255, 0.12);
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.3);
+}
+body.dark-theme .top-nav .contributors-link {
+    border: 1px solid rgba(0, 255, 68, 0.4);
+    color: #baffcf;
+    background: rgba(0, 255, 68, 0.06);
+}
+body.dark-theme .top-nav .contributors-link:hover {
+    border-color: #00ff44;
+    box-shadow: 0 0 14px rgba(0, 255, 68, 0.3);
+    background: rgba(0, 255, 68, 0.12);
+}
+body.dark-theme .theme-toggle {
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    background: rgba(0, 229, 255, 0.05);
+    color: #d8fffa;
+}
+body.dark-theme .theme-toggle:hover { border-color: #00e5ff; box-shadow: 0 0 12px rgba(0, 229, 255, 0.3); }
+
+/* Filter bar styling */
+body.dark-theme .filter-bar {
+    background: rgba(0, 5, 10, 0.8);
+    border: 1px solid #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+    border-radius: 999px;
+    padding: 8px 16px;
+}
+
+body.dark-theme .filter-input, body.dark-theme .filter-select {
+    color: #e0fcf5;
+}
+body.dark-theme .filter-select {
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    background: rgba(0, 229, 255, 0.05);
+}
+body.dark-theme .filter-select option { 
+    background: #010610; 
+    color: #00e5ff; 
+}
+body.dark-theme .result-pill, body.dark-theme .active-filter {
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    background: rgba(0, 229, 255, 0.05);
+    color: #b8fff2;
+}
+
+/* Resource Cards & Subject Cards — resting glow kept subdued, full glow reserved for hover */
+body.dark-theme .resource-item, body.dark-theme .subject-card {
+    background: rgba(0, 5, 10, 0.7);
+    border: 1px solid rgba(0, 229, 255, 0.55);
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.08), inset 0 0 8px rgba(0, 229, 255, 0.03);
+    transition: all 0.25s ease;
+    border-radius: 12px;
+}
+body.dark-theme .resource-item::before { display: none; } /* Remove side gradient bar */
+
+body.dark-theme .resource-item:hover, body.dark-theme .subject-card:hover {
+    background: rgba(0, 229, 255, 0.05);
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Card title — bigger and brighter so it reads as the primary element */
+body.dark-theme .resource-title {
+    font-size: 1.14rem;
+    color: #f2fffb;
+    text-shadow: 0 0 10px rgba(0, 255, 68, 0.55);
+}
+
+/* ── Subject pill / dropdown-style filter row ── */
+body.dark-theme .subject-zone h3 { color: #8cd9d9; text-shadow: none; }
+body.dark-theme .subject-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 14px;
+}
+body.dark-theme .subject-card {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    background: rgba(0, 10, 20, 0.65);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.06);
+}
+body.dark-theme .subject-card span { color: #eafffb; }
+body.dark-theme .subject-card small {
+    font-size: 0.78rem;
+    color: #00e5ff;
+    font-weight: 800;
+}
+body.dark-theme .subject-card:hover {
+    border-color: #00e5ff;
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+}
+
+/* Neon Green for Active Subjects */
+body.dark-theme .subject-card.active {
+    border-color: #00ff44;
+    box-shadow: 0 0 15px rgba(0, 255, 68, 0.4), inset 0 0 15px rgba(0, 255, 68, 0.1);
+    background: rgba(0, 255, 68, 0.05);
+}
+body.dark-theme .subject-card.active span, body.dark-theme .subject-card.active small {
+    color: #00ff44;
+    text-shadow: 0 0 8px rgba(0, 255, 68, 0.5);
+}
+
+/* Button Styling (Rate = Green, Open = Cyan) */
+body.dark-theme .act {
+    background: transparent !important;
+    border-radius: 6px;
+    box-shadow: none !important;
+    transition: all 0.2s ease;
+}
+body.dark-theme .act-rate {
+    border: 1px solid rgba(0, 255, 68, 0.75) !important;
+    color: #00ff44 !important;
+}
+body.dark-theme .act-rate:hover {
+    border-color: #00ff44 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 68, 0.4) !important;
+    background: rgba(0, 255, 68, 0.1) !important;
+}
+
+body.dark-theme .act-open {
+    border: 1px solid rgba(0, 229, 255, 0.75) !important;
+    color: #00e5ff !important;
+}
+body.dark-theme .act-open:hover {
+    border-color: #00e5ff !important;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4) !important;
+    background: rgba(0, 229, 255, 0.1) !important;
+}
+
+/* Top Right Login Button (Danger Red) */
+body.dark-theme .top-nav a.cta-link {
+    background: #1a0005;
+    border: 1px solid #ff0033;
+    color: #ffcccc;
+    box-shadow: 0 0 8px rgba(255, 0, 51, 0.3);
+}
+body.dark-theme .top-nav a.cta-link:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.6);
+    background: rgba(255, 0, 51, 0.15);
+}
+
+/* Add-resource / add-notes button glow */
+body.dark-theme .btn-add {
+    background: rgba(0, 255, 68, 0.06) !important;
+    border: 1px solid #00ff44 !important;
+    color: #baffcf !important;
+    box-shadow: 0 0 14px rgba(0, 255, 68, 0.25) !important;
+}
+body.dark-theme .btn-add:hover {
+    box-shadow: 0 0 22px rgba(0, 255, 68, 0.45) !important;
+    background: rgba(0, 255, 68, 0.14) !important;
+}
+body.dark-theme .btn-add.cta-login {
+    background: rgba(255, 0, 51, 0.08) !important;
+    border: 1px solid #ff0033 !important;
+    color: #ffcccc !important;
+    box-shadow: 0 0 14px rgba(255, 0, 51, 0.25) !important;
+}
+body.dark-theme .btn-add.cta-login:hover {
+    box-shadow: 0 0 22px rgba(255, 0, 51, 0.45) !important;
+}
+
+/* Tab strip glow */
+body.dark-theme .tab-btn { color: #8cd9d9; }
+body.dark-theme .tab-btn.active {
+    background: rgba(0, 255, 68, 0.08);
+    color: #baffcf;
+    box-shadow: inset 0 0 0 1px rgba(0, 255, 68, 0.5), 0 0 14px rgba(0, 255, 68, 0.25);
+}
+body.dark-theme .tab-btn:hover:not(.active) { background: rgba(0, 229, 255, 0.08); color: #eafffb; }
+body.dark-theme .tab-badge { background: rgba(0, 229, 255, 0.08); border-color: rgba(0, 229, 255, 0.35); color: #b8fff2; }
+body.dark-theme .tab-btn.active .tab-badge { background: rgba(0, 255, 68, 0.12); border-color: rgba(0, 255, 68, 0.5); color: #baffcf; }
+
+/* Badges & Chips */
+/* Subject tag-chip = secondary info, kept quiet/muted so it doesn't compete with the title */
+body.dark-theme .tag-chip {
+    background: transparent;
+    border: 1px solid rgba(0, 229, 255, 0.22);
+    color: #5f9999;
+    box-shadow: none;
+}
+/* "Exam Favorite" / "Top Rated" style badges = distinct amber/gold glow to pop out of the cyan sea */
+body.dark-theme .badge {
+    background: rgba(255, 179, 0, 0.08);
+    border: 1px solid #ffb300;
+    color: #ffd479;
+    box-shadow: 0 0 10px rgba(255, 179, 0, 0.25);
+}
+/* Rating / helpful % = kept bright cyan since it's a key decision signal */
+body.dark-theme .helpful-pill {
+    background: transparent;
+    border: 1px solid rgba(0, 229, 255, 0.55);
+    color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.18);
+}
+body.dark-theme .stars-value { color: #f2fffb; }
+body.dark-theme .stars-count { color: #6fb8b8; }
+
+body.dark-theme .resource-icon {
+    border-color: #00e5ff;
+    color: #00e5ff;
+    background: rgba(0, 229, 255, 0.05);
+}
+
+/* Kebab "more actions" button — otherwise invisible against the dark background */
+body.dark-theme .kebab-btn {
+    background: rgba(0, 229, 255, 0.05);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    color: #8cd9d9;
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.12);
+}
+body.dark-theme .kebab-btn:hover,
+body.dark-theme .kebab-btn[aria-expanded="true"] {
+    background: rgba(0, 229, 255, 0.12);
+    border-color: #00e5ff;
+    color: #eafffb;
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.35);
+}
+body.dark-theme .kebab-menu {
+    background: rgba(0, 5, 10, 0.96);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.2);
+}
+body.dark-theme .kebab-item { color: #d8fffa; }
+body.dark-theme .kebab-item:hover { background: rgba(0, 229, 255, 0.1); }
+body.dark-theme .kebab-item.kebab-danger { color: #ff8080; }
+body.dark-theme .kebab-item.kebab-danger:hover { background: rgba(255, 0, 51, 0.12); }
+
+/* Status Pill Glow */
+@keyframes neonPulse {
+    from { box-shadow: 0 0 5px rgba(0, 255, 68, 0.1); border-color: rgba(0, 255, 68, 0.4); }
+    to { box-shadow: 0 0 12px rgba(0, 255, 68, 0.4); border-color: #00ff44; }
+}
+body.dark-theme .page-heading-status {
+    background: rgba(0, 255, 68, 0.05);
+    color: #00ff44;
+    border: 1px solid rgba(0, 255, 68, 0.5);
+    animation: neonPulse 2s infinite alternate ease-in-out;
+}
+body.dark-theme .page-heading-status::before {
+    background: #00ff44;
+    box-shadow: 0 0 8px #00ff44;
+}
+
+body.dark-theme .search-wrap {
+    border-color: transparent;
+    background: transparent;
+}
+body.dark-theme .filter-zone.scrolled .filter-bar {
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+    background: rgba(0, 5, 10, 0.95);
+}
+
+
+/* ── PAGE HEADER ─────────────────────────────── */
+.page-header {
+    display: flex; align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start; gap: 14px;
+    padding: 13px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    margin-bottom: 12px;
+    box-shadow: 0 12px 24px var(--shadow-warm);
+    position: relative;
+}
+.page-heading { flex: 0 0 auto; }
+.page-heading-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 8px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #e7f0e5;
+    color: #1f4d3c;
+    border: 1px solid #bfd6bd;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.page-heading-status::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2f6b3a;
+    box-shadow: 0 0 0 4px rgba(47,107,58,0.14);
+}
+.page-header h1 {
+    font-family: 'Playfair Display', 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.2vw, 2.15rem);
+    color: var(--text); letter-spacing: -0.015em; line-height: 1.2;
+}
+.page-header p { color: var(--text-muted); font-size: 0.78rem; margin-top: 2px; font-style: italic; }
+.btn-add {
+    white-space: nowrap; background: linear-gradient(135deg, var(--accent), #2c6650);
+    color: #fffdf8;
+    border: none; border-radius: var(--r-sm); padding: 7px 13px;
+    font-size: 0.78rem; font-weight: 700; font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 5px;
+    margin-left: auto;
+    transition: opacity .16s, box-shadow .16s, transform .16s; flex-shrink: 0;
+}
+.btn-add:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 12px 22px rgba(31,77,60,0.28); }
+.btn-add.cta-login {
+    background: linear-gradient(135deg, #8a3a2a, #6b1f2a);
+    box-shadow: 0 12px 22px rgba(107, 31, 42, 0.24);
+}
+.btn-add.cta-login:hover { box-shadow: 0 12px 22px rgba(107, 31, 42, 0.3); }
+.admin-report-panel { margin-bottom:12px; padding:12px 14px; background:#f7ede0; border:1px solid #e0c8a0; border-radius:var(--r-lg); }
+.admin-report-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.admin-report-heading h2 { font-size:.95rem; color:#7a3f1d; font-family: 'Source Serif 4', serif; }
+.admin-report-count { min-width:24px; padding:3px 8px; text-align:center; border-radius:999px; background:#f0dcbb; color:#7a3f1d; font-weight:700; font-size:.75rem; }
+.admin-report-list { display:grid; gap:7px; margin-top:9px; max-height:260px; overflow:auto; }
+.admin-report-item { position:relative; padding:8px 38px 8px 10px; background:#fffdf8; border:1px solid #e0c8a0; border-radius:var(--r-sm); }
+.admin-report-dismiss { position:absolute; top:7px; right:8px; width:22px; height:22px; border:1px solid #e0c8a0; border-radius:50%; background:#f7ede0; color:#7a3f1d; cursor:pointer; line-height:18px; font-size:14px; }
+.admin-report-dismiss:hover { background:#f6dede; border-color:#dba9a9; color:#8c2b2b; }
+.admin-report-item strong { font-size:.82rem; }
+.admin-report-meta, .admin-report-item small { display:block; color:#7a3f1d; font-size:.7rem; margin-top:3px; }
+.admin-report-item p { color:var(--text-muted); font-size:.78rem; margin-top:5px; word-break:break-word; }
+
+/* ── TOAST FLASH MESSAGES ─────────────────────── */
+.resource-flash-messages {
+    position: fixed; top: 16px; right: 16px; z-index: 1200;
+    display: flex; flex-direction: column; gap: 8px;
+    max-width: min(360px, 92vw);
+}
+.resource-flash {
+    position: relative;
+    display: flex; align-items: center; gap: 8px;
+    padding: 11px 34px 11px 14px; border-radius: var(--r); border: 1px solid;
+    font-size: .82rem; font-weight: 600;
+    box-shadow: 0 14px 30px var(--shadow-warm);
+    animation: toastIn .22s ease;
+}
+.resource-flash-success { color:#1f4d3c; background:#eef5ec; border-color:#bfd6bd; }
+.resource-flash-error { color:#7a2323; background:#faf0ee; border-color:#e0bcb4; }
+.resource-flash-close {
+    position: absolute; top: 7px; right: 7px;
+    width: 20px; height: 20px; border-radius: 50%;
+    border: none; background: rgba(44,33,21,0.08); color: inherit;
+    cursor: pointer; font-size: .68rem; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+}
+.resource-flash-close:hover { background: rgba(44,33,21,0.14); }
+@keyframes toastIn { from { opacity:0; transform: translateX(16px); } to { opacity:1; transform: translateX(0); } }
+@keyframes toastOut { from { opacity:1; transform: translateX(0); } to { opacity:0; transform: translateX(16px); } }
+
+/* ── TABS ────────────────────────────────────── */
+.tab-strip {
+    display: flex; gap: 3px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 4px; margin-bottom: 0;
+    box-shadow: 0 10px 24px var(--shadow-warm);
+}
+.page-header .tab-strip {
+    flex: 0 1 360px;
+    min-width: 260px;
+    box-shadow: none;
+}
+.page-header .filter-zone {
+    flex: 1 0 100%;
+    position: static;
+    z-index: auto;
+    background: transparent;
+    padding: 0;
+}
+.page-header .filter-zone::before { display: none; }
+.page-header .filter-bar {
+    justify-content: flex-start;
+    background: linear-gradient(135deg, #f3ead8 0%, #eee3d1 100%);
+    border-color: #ddccae;
+    box-shadow: inset 0 0 0 1px rgba(31,77,60,0.12);
+}
+.page-header .search-wrap,
+.page-header .filter-select {
+    background: #fffdf8;
+    border-color: #c9b487;
+}
+.page-header .result-pill,
+.page-header .active-filter {
+    background: #e7ded0;
+    border-color: #ddccae;
+    color: #3d3018;
+}
+.tab-btn {
+    flex: 1; background: transparent; border: none;
+    color: var(--text-muted); font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.82rem; font-weight: 600; padding: 7px 10px;
+    border-radius: 6px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: color .16s, background .16s;
+}
+.tab-btn.active {
+    background: var(--surface-3);
+    color: #1f4d3c;
+    box-shadow: inset 0 0 0 1px rgba(31,77,60,0.25);
+}
+.tab-btn:hover:not(.active) { color: var(--text); background: var(--surface-2); }
+.tab-badge {
+    font-size: 0.7rem; font-weight: 700;
+    padding: 1px 6px; border-radius: 999px;
+    background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border);
+}
+.tab-btn.active .tab-badge {
+    background: var(--accent-soft); color: var(--accent);
+    border-color: rgba(31,77,60,0.3);
+}
+
+/* ── STICKY FILTER ZONE ──────────────────────── */
+.filter-zone {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bg); padding: 8px 0 6px;
+}
+.filter-zone::before {
+    content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px;
+    background: linear-gradient(to bottom, transparent, var(--bg)); pointer-events: none;
+}
+.filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    padding: 10px 12px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--r-lg);
+    box-shadow: 0 12px 22px var(--shadow-warm); align-items: center;
+    justify-content: center;
+    transition: box-shadow .18s ease;
+}
+.filter-zone.scrolled .filter-bar { box-shadow: 0 18px 34px var(--shadow-warm); }
+.search-wrap {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-sm); padding: 6px 10px;
+    flex: 1 1 520px; max-width: 640px;
+}
+.search-wrap svg { width: 15px; height: 15px; color: var(--text-dim); flex-shrink: 0; }
+.filter-input, .filter-select {
+    background: transparent; border: 1px solid var(--border-md);
+    color: var(--text); border-radius: var(--r-sm); padding: 5px 9px;
+    font-size: 0.8rem; font-family: 'Source Sans 3', sans-serif; outline: none;
+    transition: border-color .16s, box-shadow .16s; min-width: 0;
+}
+.filter-input { flex: 1 1 auto; border: none; padding: 0; }
+.filter-select { flex: 0 1 148px; background: var(--surface-2); }
+.filter-input::placeholder { color: var(--text-dim); }
+.filter-input:focus, .filter-select:focus {
+    border-color: rgba(31,77,60,0.5);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.search-wrap:focus-within {
+    border-color: rgba(31,77,60,0.5);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.search-kbd {
+    flex-shrink: 0; font-size: .68rem; font-weight: 700; color: var(--text-dim);
+    border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px;
+    background: var(--surface-2); font-family: 'Source Sans 3', sans-serif;
+}
+.filter-select option { background: var(--surface-2); }
+.result-pill {
+    font-size: 0.74rem; font-weight: 600; color: var(--text-muted);
+    padding: 3px 9px; background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 999px; white-space: nowrap; flex-shrink: 0;
+}
+.active-filter {
+    font-size: 0.74rem; font-weight: 600; color: var(--text-dim);
+    padding: 3px 10px; border-radius: 999px; border: 1px dashed var(--border);
+    background: var(--surface-2); white-space: nowrap;
+}
+
+/* ── TAB PANELS ──────────────────────────────── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── RESOURCE CARDS ──────────────────────────── */
+.resource-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.resource-item {
+    position: relative;
+    display: flex; flex-direction: column; gap: 11px;
+    padding: 18px 19px 16px 21px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    transition: transform .22s cubic-bezier(.2,.8,.3,1), box-shadow .22s ease, background .22s ease, border-color .22s ease;
+    box-shadow: 0 1px 2px rgba(66,46,20,0.06), 0 12px 24px var(--shadow-warm);
+}
+.resource-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    opacity: 0; transform: translateX(-2px);
+    transition: opacity .22s ease, transform .22s ease;
+    border-top-left-radius: var(--r);
+    border-bottom-left-radius: var(--r);
+}
+.resource-item:hover {
+    border-color: var(--border-md);
+    background: var(--hover);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(66,46,20,0.10), 0 22px 38px var(--shadow-warm);
+}
+.resource-item:hover::before { opacity: 1; transform: translateX(0); }
+
+.resource-top { display: flex; align-items: flex-start; gap: 11px; }
+
+.resource-icon {
+    width: 30px; height: 30px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--surface-3); border: 1px solid #c9b487;
+    color: var(--accent); flex-shrink: 0;
+}
+.resource-icon svg { width: 15px; height: 15px; }
+
+.resource-main { min-width: 0; flex: 1; }
+.resource-title {
+    font-weight: 700; font-size: 1.06rem; color: var(--text);
+    line-height: 1.35; word-break: break-word; letter-spacing: -0.005em;
+    font-family: 'Source Serif 4', serif;
+}
+.badge-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+.tag-chip {
+    font-size: 0.68rem; font-weight: 600; color: var(--text-muted);
+    padding: 3px 9px; border-radius: 999px;
+    background: transparent; border: 1px solid var(--border-md); white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+.badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.7rem; font-weight: 800;
+    padding: 3px 9px; border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 3px rgba(66,46,20,0.10);
+}
+.badge svg { width: 12px; height: 12px; }
+.badge-amber  { background: #f6e6c8; color: #6e4210; border-color: #d9a94f; }
+.badge-blue   { background: #d9e6da; color: #17392c; border-color: #8fb590; }
+.badge-green  { background: #d3e7cf; color: #17392c; border-color: #86bb83; }
+.badge-purple { background: #e9d6da; color: #591824; border-color: #c790a0; }
+
+.resource-meta-row {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 13px; font-size: 0.78rem;
+    padding-top: 10px; border-top: 1px solid var(--border);
+}
+.stars-row { display: inline-flex; align-items: center; gap: 1px; }
+.star-ic { width: 13px; height: 13px; }
+.star-ic.filled { color: #b8792a; }
+.star-ic.empty { color: var(--border-md); }
+.stars-value { margin-left: 5px; font-weight: 700; color: var(--text); }
+.stars-count { font-weight: 500; color: var(--text-dim); }
+.no-rating {
+    color: var(--text-dim); font-weight: 600; font-style: italic;
+    font-size: 0.74rem; letter-spacing: 0.01em;
+}
+
+.helpful-pill { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; box-shadow: 0 1px 3px rgba(66,46,20,0.08); }
+.pill-green { background: #d3e7cf; color: #17392c; }
+.pill-amber { background: #f6e6c8; color: #6e4210; }
+.pill-red   { background: #f0d4d0; color: #6e1e1e; }
+
+.views-inline { display: inline-flex; align-items: center; gap: 4px; color: var(--text-dim); font-weight: 600; margin-left: auto; }
+.views-inline svg { width: 14px; height: 14px; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.resource-footer {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px dashed var(--border);
+}
+.actions-primary { display: flex; gap: 7px; flex-wrap: wrap; }
+
+.act {
+    display: inline-flex; align-items: center;
+    padding: 7px 14px; border-radius: 8px;
+    font-size: 0.79rem; font-weight: 700; font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer; text-decoration: none; border: 1px solid transparent;
+    white-space: nowrap; transition: background .15s, border-color .15s, color .15s, box-shadow .15s, transform .15s; line-height: 1.5;
+    gap: 6px; letter-spacing: 0.01em;
+}
+.act:active { transform: translateY(1px); }
+.act svg { width: 14px; height: 14px; }
+.act-open    { color: #fffdf8;  background: linear-gradient(135deg, var(--accent), #2c6650);  border-color: transparent; box-shadow: 0 4px 10px rgba(31,77,60,0.22); }
+.act-open:hover  { filter: brightness(1.07); box-shadow: 0 10px 20px rgba(31,77,60,0.32); transform: translateY(-1px); }
+.act-rate { color: #6e4210; background: #f6e6c8; border-color: #d9a94f; }
+.act-rate:hover { background: #efd9a6; border-color: #b8792a; box-shadow: 0 6px 14px rgba(184,121,42,0.24); transform: translateY(-1px); }
+.act-share { color: #174f63; background: #dff1f5; border-color: #79bdc9; }
+.act-share:hover { background: #c9e8ee; border-color: #368e9d; box-shadow: 0 6px 14px rgba(54,142,157,0.2); transform: translateY(-1px); }
+.act-share.shared { color: #14532d; background: #d9f4df; border-color: #78c98c; }
+body.dark-theme .act-share { color: #eaffff; background: rgba(0, 229, 255, 0.13); border-color: #00b8cc; box-shadow: 0 0 7px rgba(0, 229, 255, 0.16); }
+body.dark-theme .act-share:hover { color: #ffffff; background: rgba(0, 229, 255, 0.25); border-color: #00e5ff; box-shadow: 0 0 14px rgba(0, 229, 255, 0.35); }
+body.dark-theme .act-share.shared { color: #d9ffe4; background: rgba(0, 255, 68, 0.15); border-color: #00ff44; }
+
+/* ── ADMIN "MORE" KEBAB MENU ─────────────────── */
+.actions-more { position: relative; flex-shrink: 0; }
+.kebab-btn {
+    width: 34px; height: 34px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-muted);
+    display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s, box-shadow .15s;
+    box-shadow: 0 1px 2px rgba(66,46,20,0.06);
+}
+.kebab-btn svg { width: 16px; height: 16px; }
+.kebab-btn:hover, .kebab-btn[aria-expanded="true"] { background: var(--surface-3); color: var(--accent); border-color: rgba(31,77,60,0.4); box-shadow: 0 4px 10px rgba(31,77,60,0.14); }
+.kebab-menu {
+    display: none; flex-direction: column; gap: 2px;
+    position: absolute; right: 0; top: calc(100% + 6px);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(66,46,20,0.10), 0 20px 38px var(--shadow-warm); min-width: 162px; padding: 6px; z-index: 60;
+}
+.kebab-menu.open { display: flex; }
+.kebab-menu form { margin: 0; width: 100%; }
+.kebab-item {
+    display: flex; align-items: center; gap: 7px; width: 100%; text-align: left;
+    padding: 7px 9px; border-radius: 6px; border: none; background: transparent;
+    font: inherit; font-size: 0.8rem; font-weight: 600; color: var(--text);
+    text-decoration: none; cursor: pointer; transition: background .12s;
+}
+.kebab-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+.kebab-item:hover { background: var(--surface-2); }
+.kebab-item.kebab-danger { color: #8c2b2b; }
+.kebab-item.kebab-danger:hover { background: var(--danger-soft); }
+
+/* ── PAGINATION BAR ──────────────────────────── */
+.pagination {
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 8px;
+    padding: 10px 12px; margin-top: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); flex-wrap: wrap;
+    box-shadow: 0 10px 20px var(--shadow-warm);
+}
+.page-controls { display: flex; align-items: center; gap: 3px; flex-wrap: wrap; }
+.pg-btn {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.76rem; font-weight: 600; padding: 4px 9px;
+    border-radius: 999px; cursor: pointer;
+    transition: background .14s, color .14s, border-color .14s;
+    min-width: 30px; text-align: center;
+}
+.pg-btn:hover:not(:disabled):not(.active) { background: var(--surface-2); color: var(--text); }
+.pg-btn.active { background: var(--surface-3); color: #1f4d3c; border-color: #c9b487; cursor: default; }
+.pg-btn:disabled { opacity: .32; cursor: not-allowed; }
+.pg-btn.arrow { font-size: 0.88rem; padding: 4px 8px; }
+.pg-ellipsis { color: var(--text-dim); font-size: 0.76rem; padding: 0 2px; user-select: none; }
+
+.page-meta { display: flex; align-items: center; gap: 8px; }
+.page-info { font-size: 0.73rem; color: var(--text-muted); white-space: nowrap; }
+.perpage-select {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.73rem; padding: 3px 6px; border-radius: 5px; outline: none; cursor: pointer;
+}
+.perpage-select:focus { border-color: rgba(31,77,60,0.35); }
+.perpage-select option { background: var(--surface-2); }
+
+/* ── EMPTY / NO-RESULTS ──────────────────────── */
+.empty-state {
+    text-align: center; padding: 32px 20px; color: var(--text-dim);
+    font-size: 0.82rem; border: 1px dashed var(--border);
+    border-radius: var(--r); background: var(--surface); margin-top: 4px;
+    box-shadow: 0 8px 18px rgba(66,46,20,0.10);
+}
+.empty-state svg { display: block; margin: 0 auto 8px; opacity: .28; }
+.no-results-msg {
+    display: none; text-align: center; padding: 28px; color: var(--text-muted);
+    font-size: 0.82rem; border: 1px dashed var(--border); border-radius: var(--r); margin-top: 4px;
+    box-shadow: 0 8px 18px rgba(66,46,20,0.10);
+}
+
+/* ── SUBJECT GRID ───────────────────────────── */
+.subject-zone {
+    margin: 10px 0 14px;
+    padding: 13px 15px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    box-shadow: 0 1px 2px rgba(66,46,20,0.05), 0 12px 24px var(--shadow-warm);
+    position: relative;
+}
+.subject-zone h3 {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 9px;
+    font-weight: 700;
+    font-family: 'Source Serif 4', serif;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.subject-share-button {
+    width: 30px; height: 30px; display: inline-grid; place-items: center;
+    flex: 0 0 30px; border: 1px solid var(--border); border-radius: 7px;
+    background: var(--surface-2); color: var(--text-muted); padding: 0;
+    font: inherit; cursor: pointer; white-space: nowrap;
+}
+.subject-share-button svg { width: 16px; height: 16px; display: block; stroke: currentColor; }
+.subject-share-button:hover { color: var(--text); border-color: var(--accent); }
+.subject-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    align-items: stretch;
+}
+.subject-card {
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    border-radius: 12px;
+    padding: 11px 13px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform .18s cubic-bezier(.2,.8,.3,1), box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 1px 2px rgba(66,46,20,0.05);
+    flex: 0 0 auto;
+    width: max-content;
+    min-width: 82px;
+    white-space: nowrap;
+}
+.subject-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-md);
+    box-shadow: 0 10px 20px var(--shadow-warm);
+}
+.subject-card.active {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: #1f4d3c;
+    box-shadow: 0 4px 10px rgba(31,77,60,0.18);
+}
+.subject-card small {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-weight: 700;
+}
+.subject-card.active small { color: var(--accent); }
+
+/* ── PREVIEW MODAL ───────────────────────────── */
+.preview-modal {
+    position: fixed; inset: 0; background: rgba(44,33,21,0.5);
+    display: none; align-items: center; justify-content: center;
+    z-index: 1000; padding: 14px; backdrop-filter: blur(5px);
+}
+.preview-modal.active { display: flex; }
+.preview-panel {
+    width: min(960px, 96vw); height: min(84vh, 750px);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-lg); display: flex; flex-direction: column;
+    box-shadow: 0 20px 60px rgba(44,33,21,0.32); overflow: hidden;
+}
+.preview-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    background: var(--surface-2); flex-shrink: 0; gap: 10px;
+}
+.preview-header-title {
+    font-size: 0.82rem; font-weight: 600; color: var(--text);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.preview-close {
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--text-muted); width: 24px; height: 24px; border-radius: 50%;
+    cursor: pointer; font-size: 0.72rem;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    transition: background .14s, color .14s;
+}
+.preview-close:hover { background: var(--danger-soft); color: #8c2b2b; }
+.preview-frame { flex: 1; border: none; width: 100%; background: #fffdf8; }
+.preview-modal.feedback-only .preview-panel { height: auto; max-height: min(84vh, 750px); }
+.preview-modal.feedback-only .preview-frame { display: none; }
+.preview-modal.feedback-only .feedback-strip { border-top: 0; }
+.feedback-strip { padding: 8px 12px; border-top: 1px solid var(--border); background: var(--surface-2); display: flex; align-items: center; gap: 7px; flex-wrap: wrap; font-size: .76rem; }
+.feedback-strip button { border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); border-radius: 6px; padding: 4px 7px; cursor: pointer; }
+.feedback-strip button.selected { color: var(--accent); border-color: var(--accent); }
+.feedback-submit { background: var(--accent) !important; color: #fffdf8 !important; border-color: var(--accent) !important; }
+.feedback-message { color: var(--text-muted); }
+.feedback-review { flex: 1 0 100%; min-height: 44px; max-height: 90px; resize: vertical; border: 1px solid var(--border); border-radius: 6px; padding: 7px; font: inherit; font-size: .76rem; color: var(--text); background: var(--surface); }
+.feedback-review::placeholder { color: var(--text-dim); }
+.recent-reviews { flex: 1 0 100%; color: var(--text-muted); font-size: .72rem; max-height: 58px; overflow: auto; }
+.recent-review { padding: 4px 0; border-top: 1px solid var(--border); }
+.review-helpful { margin-left: 6px; padding: 2px 5px !important; font-size: .65rem !important; }
+.review-helpful.voted { color: var(--accent) !important; border-color: var(--accent) !important; }
+.feedback-tags { flex: 1 0 100%; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.feedback-tags button { font-size: .7rem; padding: 4px 7px; }
+.feedback-tags button.positive { border-color: #bfd6bd; color: #1f4d3c; background: #eef5ec; }
+.feedback-tags button.negative { border-color: #e0bcb4; color: #7a2323; background: #faf0ee; }
+.feedback-tags button.selected.positive { color: #1f4d3c; border-color: #2f6b3a; background: #dcead9; }
+.feedback-tags button.selected.negative { color: #7a2323; border-color: #8c2b2b; background: #f3dbd8; }
+.report-zone { flex: 1 0 100%; border-top: 1px solid var(--border); padding-top: 6px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.report-zone select, .report-zone input { border: 1px solid var(--border); border-radius: 6px; padding: 5px 7px; font: inherit; font-size: .72rem; color: var(--text); background: var(--surface); }
+.report-zone input { flex: 1 1 180px; }
+.report-link { background: transparent !important; border: 0 !important; color: var(--text-muted) !important; padding-left: 0 !important; text-decoration: underline; }
+
+/* ── MOBILE & DESKTOP GRIDS ──────────────────────────────────── */
+@media (max-width: 640px) {
+    .page { padding: 10px 9px 52px; }
+    .page-header { flex-direction: column; align-items: stretch; gap: 8px; }
+    .page-header .tab-strip { min-width: 0; width: 100%; flex-basis: auto; }
+    .btn-add { margin-left: 0; justify-content: center; }
+    .resource-item { padding: 12px; }
+    .search-wrap { flex: 1 1 100%; max-width: none; }
+    .search-kbd { display: none; }
+    .filter-select { flex: 1 1 100%; }
+    .pagination { gap: 6px; }
+    .page-meta { width: 100%; justify-content: space-between; }
+    .views-inline { margin-left: 0; }
+    .resource-flash-messages { left: 12px; right: 12px; max-width: none; }
+}
+
+@media (min-width: 640px) {
+    .resource-list { 
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
+        gap: 12px; 
+    }
+}
+@media (min-width: 1100px) {
+    .resource-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1680px) {
+    .resource-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+    </style>
+</head>
+<body>
+{% include '_mauryahub_promo.html' %}
+<div class="page">
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+    <a href="{{ url_for('course_view') }}">Dashboard</a>
+    <a href="{{ url_for('general_resources_page') }}">General Resources</a>
+    {% if admin_mode %}
+        <a href="{{ url_for('admin_resource_subjects') }}">+ Add Subject</a>
+    {% endif %}
+    {% if admin_mode %}
+        <a href="{{ url_for('admin_add_general_resource') }}">+ Add Resource</a>
+        <a href="{{ url_for('admin_pending_resource_submissions') }}">Pending Submissions</a>
+    {% endif %}
+    {% if current_user %}
+        <a href="{{ url_for('submit_general_resource') }}">Add Your Notes</a>
+        <a href="{{ url_for('my_resource_submissions') }}">Your Contributions</a>
+        <a href="{{ url_for('user_logout') }}">Logout</a>
+    {% else %}
+        <a class="cta-link" href="{{ url_for('google_login', next=request.path) }}">Login to Add Notes</a>
+    {% endif %}
+    <button class="contributors-link" id="topContributorsButton" type="button" aria-haspopup="dialog" aria-controls="contributorsModal" onclick="openContributors()">Top Contributors</button>
+    <button class="theme-toggle" id="resourceThemeToggle" type="button" aria-label="Toggle theme">🌙 Dark mode</button>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <div class="page-heading">
+        <h1>General Resources</h1>
+        <p>Shared learning materials by program type</p>
+        {% if admin_mode %}
+            <span class="page-heading-status">Admin Active</span>
+        {% endif %}
+    </div>
+    <div class="tab-strip" role="tablist">
+        <button class="tab-btn" role="tab" aria-selected="false"
+            aria-controls="panel-diploma" id="tab-diploma"
+            onclick="switchTab('diploma')">
+            Diploma
+            <span class="tab-badge" id="badge-diploma">{{ diploma_resources | length if diploma_resources else 0 }}</span>
+        </button>
+        <button class="tab-btn active" role="tab" aria-selected="true"
+            aria-controls="panel-degree" id="tab-degree"
+            onclick="switchTab('degree')">
+            Degree
+            <span class="tab-badge" id="badge-degree">{{ degree_resources | length if degree_resources else 0 }}</span>
+        </button>
+    </div>
+    {% if admin_mode %}
+        <a class="btn-add" href="{{ url_for('admin_add_general_resource') }}">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6.75 1.25a.75.75 0 0 0-1.5 0v4H1.25a.75.75 0 0 0 0 1.5h4v4a.75.75 0 0 0 1.5 0v-4h4a.75.75 0 0 0 0-1.5h-4v-4Z"/>
+            </svg>
+            Add Resource
+        </a>
+    {% elif current_user %}
+        <a class="btn-add" href="{{ url_for('submit_general_resource') }}">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6.75 1.25a.75.75 0 0 0-1.5 0v4H1.25a.75.75 0 0 0 0 1.5h4v4a.75.75 0 0 0 1.5 0v-4h4a.75.75 0 0 0 0-1.5h-4v-4Z"/>
+            </svg>
+            Add Your Notes
+        </a>
+    {% else %}
+        <a class="btn-add cta-login" href="{{ url_for('google_login', next=request.path) }}">Login to Add Notes</a>
+    {% endif %}
+    <div class="filter-zone">
+        <div class="filter-bar">
+            <div class="search-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M21 21l-3.5-3.5"></path>
+                </svg>
+                <input class="filter-input" id="resourceSearch" type="text"
+                       placeholder="Search title or tag" autocomplete="off">
+                <span class="search-kbd">Ctrl K</span>
+            </div>
+            <select class="filter-select" id="subjectFilter">
+                <option value="">All subjects</option>
+            </select>
+            <select class="filter-select" id="tagFilter">
+                <option value="">All tags</option>
+                {% for tag in all_tags %}
+                    <option value="{{ tag }}">{{ tag }}</option>
+                {% endfor %}
+            </select>
+            <select class="filter-select" id="resourceSort" aria-label="Sort resources" onchange="changeResourceSort(this.value)">
+                <option value="recommended" {% if resource_sort == 'recommended' %}selected{% endif %}>Recommended</option>
+                <option value="top-rated" {% if resource_sort == 'top-rated' %}selected{% endif %}>Top Rated</option>
+                <option value="most-helpful" {% if resource_sort == 'most-helpful' %}selected{% endif %}>Most Helpful</option>
+                <option value="latest" {% if resource_sort == 'latest' %}selected{% endif %}>Latest</option>
+                <option value="most-viewed" {% if resource_sort == 'most-viewed' %}selected{% endif %}>Most Viewed</option>
+            </select>
+            <span class="result-pill" id="resultCount">- items</span>
+            <span class="active-filter" id="activeFilters">All resources</span>
+        </div>
+    </div>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="resource-flash-messages" id="resourceFlashMessages" role="status" aria-live="polite">
+            {% for category, message in messages %}
+                <div class="resource-flash resource-flash-{{ category }}">
+                    <span aria-hidden="true">{% if category == 'success' %}✓{% else %}!{% endif %}</span>
+                    <span>{{ message }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+{% if admin_mode and reports %}
+<section class="admin-report-panel" id="resourceReports" aria-label="Resource reports">
+    <div class="admin-report-heading">
+        <h2>Resource reports</h2>
+        <span class="admin-report-count">{{ reports|length }}</span>
+    </div>
+    <div class="admin-report-list">
+        {% for report in reports %}
+        <article class="admin-report-item">
+            <form method="post" action="{{ url_for('admin_delete_resource_report', report_id=report[0]) }}" onsubmit="return confirm('Dismiss this report?');">
+                <button type="submit" class="admin-report-dismiss" title="Dismiss report" aria-label="Dismiss report">✕</button>
+            </form>
+            <strong>{{ report[2] }}</strong>
+            <span class="admin-report-meta">
+                {% if report[3] == 'outdated' %}Outdated content{% elif report[3] == 'broken' %}Broken link{% elif report[3] == 'incorrect' %}Incorrect information{% else %}Other{% endif %}
+                · {{ report[6].strftime('%d %b %Y, %I:%M %p') if report[6] else '' }}
+            </span>
+            <p>{{ report[4] or 'No details provided.' }}</p>
+            <small>Anonymous reporter: {{ (report[5] or 'unknown')[:12] }}…</small>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- ══════════════════════════════════
+     DIPLOMA PANEL
+══════════════════════════════════ -->
+<div class="tab-panel" id="panel-diploma" role="tabpanel" aria-labelledby="tab-diploma">
+    <div class="subject-zone">
+        <h3>Diploma Subjects</h3>
+        <div class="subject-grid" id="subject-grid-diploma"></div>
+    </div>
+    {% if diploma_resources %}
+        <ul class="resource-list" id="list-diploma">
+            {% for resource in diploma_resources %}{% set lv = resource[2] or '' %}
+            <li class="resource-item"
+                data-title="{{ resource[1] | lower }}"
+                data-tags="{{ resource[5] | default('') | lower }}"
+                data-program="diploma"
+                data-subject-id="{{ resource[6] or '' }}"
+                data-subject-name="{{ resource[7] | default('unassigned') | lower }}">
+                <div class="resource-top">
+                    <span class="resource-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" />
+                            <path d="M14 3v6h6" />
+                        </svg>
+                    </span>
+                    <div class="resource-main">
+                        <div class="resource-title" title="{{ resource[1] }}{% if resource[19] %} ({{ resource[19] }}){% endif %}">{{ resource[1] }}{% if resource[19] %} ({{ resource[19] }}){% endif %}</div>
+                        <div class="badge-row">
+                            {% if resource[7] %}<span class="tag-chip">Subject: {{ resource[7] }}</span>{% endif %}
+                            {% if resource[20] %}
+                                {% set badge_text = resource[20] %}
+                                {% if 'Exam' in badge_text %}
+                                    <span class="badge badge-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.6-4.9-2.6-4.9 2.6.9-5.6-4-3.9 5.5-.8z" /></svg>{{ badge_text }}</span>
+                                {% elif 'Trend' in badge_text %}
+                                    <span class="badge badge-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>{{ badge_text }}</span>
+                                {% elif 'New' in badge_text %}
+                                    <span class="badge badge-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" /></svg>{{ badge_text }}</span>
+                                {% else %}
+                                    <span class="badge badge-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.6-4.9-2.6-4.9 2.6.9-5.6-4-3.9 5.5-.8z" /></svg>{{ badge_text }}</span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-meta-row">
+                    <span class="stars-row" aria-label="Rating">
+                        {% if resource[9] %}
+                            {% set rating_val = resource[8] or 0 %}
+                            {% set rounded = rating_val|round(0,'common')|int %}
+                            {% for i in range(1,6) %}
+                                {% if i <= rounded %}
+                                <svg class="star-ic filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.8z"/></svg>
+                                {% else %}
+                                <svg class="star-ic empty" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 1.5l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.8z"/></svg>
+                                {% endif %}
+                            {% endfor %}
+                            <span class="stars-value">{{ '%.1f'|format(rating_val) }} <span class="stars-count">({{ resource[9] }})</span></span>
+                        {% else %}
+                            <span class="no-rating">No ratings yet</span>
+                        {% endif %}
+                    </span>
+                    {% if resource[11] %}
+                        {% set helpful_val = resource[12] or 0 %}
+                        {% if helpful_val >= 90 %}{% set hclass = 'pill-green' %}{% elif helpful_val >= 70 %}{% set hclass = 'pill-amber' %}{% else %}{% set hclass = 'pill-red' %}{% endif %}
+                        <span class="helpful-pill {{ hclass }}">👍 {{ '%.0f'|format(helpful_val) }}% helpful</span>
+                    {% endif %}
+                    <span class="views-inline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1.5 12s4.5-7 10.5-7 10.5 7 10.5 7-4.5 7-10.5 7S1.5 12 1.5 12z" />
+                            <circle cx="12" cy="12" r="3.5" />
+                        </svg>
+                        {% if resource[4] and resource[4] >= 1000 %}{{ '%.1f'|format(resource[4]/1000) }}k{% else %}{{ resource[4] or 0 }}{% endif %} views
+                    </span>
+                </div>
+
+                {% if resource[5] %}<div class="tag-row">{% for tag in resource[5].split(',') %}{% if tag.strip() %}<span class="tag-chip">{{ tag.strip() }}</span>{% endif %}{% endfor %}</div>{% endif %}
+
+                <div class="resource-footer">
+                    <div class="actions-primary">
+                        <button class="act act-rate" type="button" data-resource-id="{{ resource[0] }}" data-title="{{ resource[1] | e }}" onclick="openFeedbackFromCard(this)">Rate</button>
+                        <button class="act act-share" type="button" data-title="{{ resource[1] | e }}" data-share-url="{{ url_for('open_general_resource', resource_id=resource[0], _external=True) }}" onclick="shareResource(this)" title="Share resource" aria-label="Share resource">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/></svg>
+                        </button>
+                        <a class="act act-open" href="{{ url_for('open_general_resource', resource_id=resource[0]) }}" target="_blank" data-resource-id="{{ resource[0] }}" data-title="{{ resource[1] | e }}" onclick="openFeedbackAfterOpen(this)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 3h7v7" />
+                                <path d="M10 14L21 3" />
+                                <path d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                            </svg>
+                            Open
+                        </a>
+                    </div>
+                    {% if admin_mode %}
+                        <div class="actions-more">
+                            <button class="kebab-btn" type="button" aria-haspopup="true" aria-expanded="false" title="More actions" onclick="toggleKebab(this)">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+                            </button>
+                            <div class="kebab-menu">
+                                <a class="kebab-item" href="{{ url_for('download_general_resource', resource_id=resource[0]) }}">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+                                    Download
+                                </a>
+                                <a class="kebab-item" href="{{ url_for('admin_edit_general_resource', resource_id=resource[0]) }}">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" /></svg>
+                                    Edit
+                                </a>
+                                <form method="post" action="{{ url_for('admin_delete_general_resource', resource_id=resource[0]) }}" onsubmit="return confirm('Delete this resource?');">
+                                    <button class="kebab-item kebab-danger" type="submit">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18" /><path d="M8 6V4h8v2" /><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" /><path d="M10 11v6" /><path d="M14 11v6" /></svg>
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <p class="no-results-msg" id="no-diploma">No resources match your search.</p>
+        <div class="pagination" id="pg-diploma" style="display:none"></div>
+    {% else %}
+        <div class="empty-state">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"/>
+            </svg>No diploma resources added yet.
+        </div>
+    {% endif %}
+</div>
+
+<!-- ══════════════════════════════════
+     DEGREE PANEL
+══════════════════════════════════ -->
+<div class="tab-panel active" id="panel-degree" role="tabpanel" aria-labelledby="tab-degree">
+    <div class="subject-zone">
+        <h3>Degree Subjects</h3>
+        <div class="subject-grid" id="subject-grid-degree"></div>
+    </div>
+    {% if degree_resources %}
+        <ul class="resource-list" id="list-degree">
+            {% for resource in degree_resources %}{% set lv = resource[2] or '' %}
+            <li class="resource-item"
+                data-title="{{ resource[1] | lower }}"
+                data-tags="{{ resource[5] | default('') | lower }}"
+                data-program="degree"
+                data-subject-id="{{ resource[6] or '' }}"
+                data-subject-name="{{ resource[7] | default('unassigned') | lower }}">
+                <div class="resource-top">
+                    <span class="resource-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" />
+                            <path d="M14 3v6h6" />
+                        </svg>
+                    </span>
+                    <div class="resource-main">
+                        <div class="resource-title" title="{{ resource[1] }}{% if resource[19] %} ({{ resource[19] }}){% endif %}">{{ resource[1] }}{% if resource[19] %} ({{ resource[19] }}){% endif %}</div>
+                        <div class="badge-row">
+                            {% if resource[7] %}<span class="tag-chip">Subject: {{ resource[7] }}</span>{% endif %}
+                            {% if resource[20] %}
+                                {% set badge_text = resource[20] %}
+                                {% if 'Exam' in badge_text %}
+                                    <span class="badge badge-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.6-4.9-2.6-4.9 2.6.9-5.6-4-3.9 5.5-.8z" /></svg>{{ badge_text }}</span>
+                                {% elif 'Trend' in badge_text %}
+                                    <span class="badge badge-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>{{ badge_text }}</span>
+                                {% elif 'New' in badge_text %}
+                                    <span class="badge badge-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" /></svg>{{ badge_text }}</span>
+                                {% else %}
+                                    <span class="badge badge-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.6-4.9-2.6-4.9 2.6.9-5.6-4-3.9 5.5-.8z" /></svg>{{ badge_text }}</span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-meta-row">
+                    <span class="stars-row" aria-label="Rating">
+                        {% if resource[9] %}
+                            {% set rating_val = resource[8] or 0 %}
+                            {% set rounded = rating_val|round(0,'common')|int %}
+                            {% for i in range(1,6) %}
+                                {% if i <= rounded %}
+                                <svg class="star-ic filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.8z"/></svg>
+                                {% else %}
+                                <svg class="star-ic empty" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 1.5l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.8z"/></svg>
+                                {% endif %}
+                            {% endfor %}
+                            <span class="stars-value">{{ '%.1f'|format(rating_val) }} <span class="stars-count">({{ resource[9] }})</span></span>
+                        {% else %}
+                            <span class="no-rating">No ratings yet</span>
+                        {% endif %}
+                    </span>
+                    {% if resource[11] %}
+                        {% set helpful_val = resource[12] or 0 %}
+                        {% if helpful_val >= 90 %}{% set hclass = 'pill-green' %}{% elif helpful_val >= 70 %}{% set hclass = 'pill-amber' %}{% else %}{% set hclass = 'pill-red' %}{% endif %}
+                        <span class="helpful-pill {{ hclass }}">👍 {{ '%.0f'|format(helpful_val) }}% helpful</span>
+                    {% endif %}
+                    <span class="views-inline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1.5 12s4.5-7 10.5-7 10.5 7 10.5 7-4.5 7-10.5 7S1.5 12 1.5 12z" />
+                            <circle cx="12" cy="12" r="3.5" />
+                        </svg>
+                        {% if resource[4] and resource[4] >= 1000 %}{{ '%.1f'|format(resource[4]/1000) }}k{% else %}{{ resource[4] or 0 }}{% endif %} views
+                    </span>
+                </div>
+
+                {% if resource[5] %}<div class="tag-row">{% for tag in resource[5].split(',') %}{% if tag.strip() %}<span class="tag-chip">{{ tag.strip() }}</span>{% endif %}{% endfor %}</div>{% endif %}
+
+                <div class="resource-footer">
+                    <div class="actions-primary">
+                        <button class="act act-rate" type="button" data-resource-id="{{ resource[0] }}" data-title="{{ resource[1] | e }}" onclick="openFeedbackFromCard(this)">Rate</button>
+                        <button class="act act-share" type="button" data-title="{{ resource[1] | e }}" data-share-url="{{ url_for('open_general_resource', resource_id=resource[0], _external=True) }}" onclick="shareResource(this)" title="Share resource" aria-label="Share resource">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/></svg>
+                        </button>
+                        <a class="act act-open" href="{{ url_for('open_general_resource', resource_id=resource[0]) }}" target="_blank" data-resource-id="{{ resource[0] }}" data-title="{{ resource[1] | e }}" onclick="openFeedbackAfterOpen(this)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 3h7v7" />
+                                <path d="M10 14L21 3" />
+                                <path d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                            </svg>
+                            Open
+                        </a>
+                    </div>
+                    {% if admin_mode %}
+                        <div class="actions-more">
+                            <button class="kebab-btn" type="button" aria-haspopup="true" aria-expanded="false" title="More actions" onclick="toggleKebab(this)">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+                            </button>
+                            <div class="kebab-menu">
+                                <a class="kebab-item" href="{{ url_for('download_general_resource', resource_id=resource[0]) }}">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+                                    Download
+                                </a>
+                                <a class="kebab-item" href="{{ url_for('admin_edit_general_resource', resource_id=resource[0]) }}">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" /></svg>
+                                    Edit
+                                </a>
+                                <form method="post" action="{{ url_for('admin_delete_general_resource', resource_id=resource[0]) }}" onsubmit="return confirm('Delete this resource?');">
+                                    <button class="kebab-item kebab-danger" type="submit">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18" /><path d="M8 6V4h8v2" /><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" /><path d="M10 11v6" /><path d="M14 11v6" /></svg>
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <p class="no-results-msg" id="no-degree">No resources match your search.</p>
+        <div class="pagination" id="pg-degree" style="display:none"></div>
+    {% else %}
+        <div class="empty-state">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"/>
+            </svg>No degree resources added yet.
+        </div>
+    {% endif %}
+</div>
+
+</div><!-- /page -->
+
+<!-- TOP CONTRIBUTORS MODAL -->
+<div class="preview-modal" id="contributorsModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="top-contributors-title">
+    <div class="preview-panel contributors-panel">
+        <div class="preview-header">
+            <div>
+                <div class="preview-header-title" id="top-contributors-title">Top Contributors</div>
+                <span class="top-contributors-heading"><span>Ranked by approved resources</span></span>
+            </div>
+            <button class="preview-close" type="button" onclick="closeContributors()" title="Close (Esc)" aria-label="Close top contributors">✕</button>
+        </div>
+        {% if top_contributors %}
+            <ol class="top-contributors-list">
+                {% for contributor in top_contributors %}
+                    <li>
+                        <span class="contributor-rank">{% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% else %}{{ loop.index }}{% endif %}</span>
+                        <strong><button class="contributor-name-button" type="button" data-username="{{ contributor[0] | e }}" onclick="openContributorResources(this)">{{ contributor[0] }}</button></strong>
+                        <span>{{ contributor[1] }} contribution{% if contributor[1] != 1 %}s{% endif %}</span>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p class="top-contributors-empty">No named contributors yet.</p>
+        {% endif %}
+        <div id="contributorResources" style="display:none"></div>
+    </div>
+</div>
+
+<!-- PREVIEW MODAL -->
+<div class="preview-modal" id="previewModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="preview-panel">
+        <div class="preview-header">
+            <span class="preview-header-title" id="previewTitle">Preview</span>
+            <button class="preview-close" type="button" onclick="closePreview()" title="Close (Esc)">✕</button>
+        </div>
+        <iframe class="preview-frame" id="previewFrame" title="Resource preview"></iframe>
+        <div class="feedback-strip" id="feedbackStrip">
+            <span>Rate this resource:</span>
+            <span id="feedbackStars">{% for n in range(1, 6) %}<button type="button" data-rating="{{ n }}" onclick="selectResourceRating({{ n }})">★</button>{% endfor %}</span>
+            <span>Was it helpful?</span>
+            <button type="button" title="25% helpful" data-helpfulness="1" onclick="selectResourceHelpful(1)">😕 25%</button>
+            <button type="button" title="50% helpful" data-helpfulness="2" onclick="selectResourceHelpful(2)">😐 50%</button>
+            <button type="button" title="75% helpful" data-helpfulness="3" onclick="selectResourceHelpful(3)">🙂 75%</button>
+            <button type="button" title="100% helpful" data-helpfulness="4" onclick="selectResourceHelpful(4)">🤩 100%</button>
+            <div class="feedback-tags">
+                <span>Quick tags:</span>
+                <button type="button" class="positive" data-review-tag="Easy to understand" onclick="toggleReviewTag(this)">Easy to understand</button>
+                <button type="button" class="positive" data-review-tag="Complete syllabus" onclick="toggleReviewTag(this)">Complete syllabus</button>
+                <button type="button" class="positive" data-review-tag="Good for revision" onclick="toggleReviewTag(this)">Good for revision</button>
+                <button type="button" class="positive" data-review-tag="Good examples" onclick="toggleReviewTag(this)">Good examples</button>
+                <button type="button" class="negative" data-review-tag="Outdated" onclick="toggleReviewTag(this)">Outdated</button>
+                <button type="button" class="negative" data-review-tag="Missing topics" onclick="toggleReviewTag(this)">Missing topics</button>
+            </div>
+            <textarea id="feedbackReview" class="feedback-review" maxlength="500" placeholder="Optional review: what did you like or what can be improved?"></textarea>
+            <button type="button" id="feedbackSubmitButton" class="feedback-submit" onclick="submitResourceFeedback()">Submit</button>
+            <button type="button" id="feedbackEditButton" class="feedback-submit" onclick="editFeedback()" style="display:none">Edit your feedback</button>
+            <span class="feedback-message" id="feedbackMessage"></span>
+            <div class="recent-reviews" id="recentReviews"></div>
+            <div class="report-zone">
+                <button type="button" class="report-link" onclick="toggleReportForm()">Report an issue</button>
+                <select id="reportIssue" style="display:none">
+                    <option value="">Choose issue</option>
+                    <option value="outdated">Outdated content</option>
+                    <option value="broken">Broken link</option>
+                    <option value="incorrect">Incorrect information</option>
+                    <option value="other">Other</option>
+                </select>
+                <input id="reportDetails" type="text" maxlength="300" placeholder="Optional details" style="display:none">
+                <button id="reportSubmit" type="button" class="feedback-submit" onclick="submitResourceReport()" style="display:none">Send report</button>
+                <span id="reportMessage" class="feedback-message"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   PAGINATION ENGINE
+   Per-panel state: { page, perPage, filtered[] }
+════════════════════════════════════════════════ */
+const DEFAULT_PER = 20;
+const state = {
+    diploma: { page: 1, perPage: DEFAULT_PER, filtered: [] },
+    degree:  { page: 1, perPage: DEFAULT_PER, filtered: [] }
+};
+
+function allItems(id) {
+    const l = document.getElementById('list-' + id);
+    return l ? Array.from(l.querySelectorAll('.resource-item')) : [];
+}
+
+function getFiltered(id, query, tag, subjectId) {
+    return allItems(id).filter(item => {
+        const title = item.getAttribute('data-title') || '';
+        const tags  = item.getAttribute('data-tags')  || '';
+        const itemSubject = item.getAttribute('data-subject-id') || '';
+        const mQ = !query || title.includes(query) || tags.includes(query);
+        const mT = !tag   || tags.split(',').map(v => v.trim()).includes(tag);
+        const mS = !subjectId || (subjectId === '__unassigned' ? !itemSubject : itemSubject === subjectId);
+        return mQ && mT && mS;
+    });
+}
+
+function renderPage(id) {
+    const s     = state[id];
+    const all   = allItems(id);
+    const filt  = s.filtered;
+    const start = (s.page - 1) * s.perPage;
+    const end   = start + s.perPage;
+    const pageSet = new Set(filt.slice(start, end));
+
+    all.forEach(item => {
+        item.style.display = pageSet.has(item) ? '' : 'none';
+    });
+    renderPagination(id);
+    updateResultCount();
+}
+
+function renderPagination(id) {
+    const s     = state[id];
+    const total = s.filtered.length;
+    const pages = Math.ceil(total / s.perPage) || 1;
+    const bar   = document.getElementById('pg-' + id);
+    if (!bar) return;
+
+    if (total <= s.perPage) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+
+    const cur   = s.page;
+    const start = (cur - 1) * s.perPage + 1;
+    const end   = Math.min(cur * s.perPage, total);
+
+    /* page number buttons with ellipsis */
+    let nums = '', prev = null;
+    for (let p = 1; p <= pages; p++) {
+        const show = p === 1 || p === pages || (p >= cur - 1 && p <= cur + 1);
+        if (!show) continue;
+        if (prev !== null && p - prev > 1) nums += '<span class="pg-ellipsis">…</span>';
+        nums += `<button class="pg-btn${p === cur ? ' active' : ''}"
+                    onclick="goPage('${id}',${p})"
+                    ${p === cur ? 'aria-current="page"' : ''}>${p}</button>`;
+        prev = p;
+    }
+
+    bar.innerHTML = `
+        <div class="page-controls">
+            <button class="pg-btn arrow" onclick="goPage('${id}',${cur-1})" ${cur===1?'disabled':''}>‹</button>
+            ${nums}
+            <button class="pg-btn arrow" onclick="goPage('${id}',${cur+1})" ${cur===pages?'disabled':''}>›</button>
+        </div>
+        <div class="page-meta">
+            <span class="page-info">${start}–${end} of ${total}</span>
+            <select class="perpage-select" title="Per page" onchange="changePerPage('${id}',this.value)">
+                ${[10,20,30,40,50].map(n=>`<option value="${n}"${n===s.perPage?' selected':''}>${n}/page</option>`).join('')}
+            </select>
+        </div>`;
+}
+
+function goPage(id, p) {
+    const s = state[id];
+    s.page = Math.max(1, Math.min(p, Math.ceil(s.filtered.length / s.perPage) || 1));
+    renderPage(id);
+    const panel = document.getElementById('panel-' + id);
+    if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function changePerPage(id, val) {
+    state[id].perPage = parseInt(val, 10);
+    state[id].page = 1;
+    renderPage(id);
+}
+
+/* ════════════════════════════════════════════════
+   FILTERS
+════════════════════════════════════════════════ */
+const searchInput = document.getElementById('resourceSearch');
+const subjectFilter = document.getElementById('subjectFilter');
+const tagFilter   = document.getElementById('tagFilter');
+const resultCount = document.getElementById('resultCount');
+const activeFilters = document.getElementById('activeFilters');
+const subjectsByProgram = {{ subjects_by_program | tojson }};
+const hasUnassigned = {{ has_unassigned | tojson }};
+
+function changeResourceSort(value) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('sort', value);
+    window.location.href = url.toString();
+}
+
+function applyFilters() {
+    const q = (searchInput.value || '').trim().toLowerCase();
+    const t = (tagFilter.value  || '').trim().toLowerCase();
+    const s = (subjectFilter.value || '').trim();
+    ['diploma','degree'].forEach(id => {
+        state[id].filtered = getFiltered(id, q, t, s);
+        state[id].page = 1;
+        const noMsg = document.getElementById('no-' + id);
+        if (noMsg) noMsg.style.display = (allItems(id).length > 0 && state[id].filtered.length === 0) ? 'block' : 'none';
+        renderPage(id);
+    });
+    updateActiveFilters();
+    const active = document.querySelector('.tab-panel.active');
+    if (active) {
+        const program = active.id.replace('panel-', '');
+        renderSubjectGrid(program);
+    }
+}
+
+function updateResultCount() {
+    const active = document.querySelector('.tab-panel.active');
+    if (!active) return;
+    const id = active.id.replace('panel-', '');
+    const n  = state[id].filtered.length;
+    resultCount.textContent = n + ' item' + (n === 1 ? '' : 's');
+}
+
+function updateActiveFilters() {
+    const q = (searchInput.value || '').trim();
+    const t = (tagFilter.value  || '').trim();
+    const s = (subjectFilter.value || '').trim();
+    const parts = [];
+    if (q) parts.push('Search: ' + q);
+    if (t) parts.push('Tag: ' + t);
+    if (s) {
+        const current = subjectFilter.options[subjectFilter.selectedIndex];
+        if (current) parts.push('Subject: ' + current.textContent);
+    }
+    activeFilters.textContent = parts.length ? parts.join(' | ') : 'All resources';
+}
+
+let searchDebounceTimer = null;
+searchInput.addEventListener('input', () => {
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(applyFilters, 150);
+});
+subjectFilter.addEventListener('change', applyFilters);
+tagFilter.addEventListener('change', applyFilters);
+
+/* ════════════════════════════════════════════════
+   TAB SWITCHING
+════════════════════════════════════════════════ */
+function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(b => {
+        const on = b.id === 'tab-' + name;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', on);
+    });
+    document.querySelectorAll('.tab-panel').forEach(p =>
+        p.classList.toggle('active', p.id === 'panel-' + name));
+    refreshSubjectOptions(name);
+    applyFilters();
+    renderSubjectGrid(name);
+}
+
+function saveResourceViewState() {
+    try {
+        const active = document.querySelector('.tab-panel.active');
+        sessionStorage.setItem('mh_resource_view_state', JSON.stringify({
+            program: active ? active.id.replace('panel-', '') : 'degree',
+            subject: subjectFilter.value || '',
+            tag: tagFilter.value || '',
+            search: searchInput.value || ''
+        }));
+    } catch (_) {}
+}
+
+function restoreResourceViewState() {
+    let saved = null;
+    try {
+        saved = JSON.parse(sessionStorage.getItem('mh_resource_view_state') || 'null');
+        sessionStorage.removeItem('mh_resource_view_state');
+    } catch (_) {}
+    const sharedParams = new URLSearchParams(window.location.search);
+    const sharedProgram = sharedParams.get('program');
+    const sharedSubject = sharedParams.get('subject_id');
+    const program = sharedProgram === 'diploma' || sharedProgram === 'degree'
+        ? sharedProgram
+        : (saved && (saved.program === 'diploma' || saved.program === 'degree') ? saved.program : 'degree');
+    searchInput.value = saved && saved.search ? saved.search : '';
+    tagFilter.value = saved && saved.tag ? saved.tag : '';
+    switchTab(program);
+    if ((sharedSubject || (saved && saved.subject))) {
+        refreshSubjectOptions(program);
+        subjectFilter.value = sharedSubject || saved.subject;
+        applyFilters();
+        renderSubjectGrid(program);
+    }
+}
+
+/* INIT */
+restoreResourceViewState();
+
+/* ════════════════════════════════════════════════
+   TOAST FLASH MESSAGES
+════════════════════════════════════════════════ */
+function dismissToast(el) {
+    el.style.animation = 'toastOut .2s ease forwards';
+    setTimeout(() => el.remove(), 200);
+}
+document.querySelectorAll('.resource-flash').forEach(el => {
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'resource-flash-close';
+    closeBtn.innerHTML = '✕';
+    closeBtn.type = 'button';
+    closeBtn.setAttribute('aria-label', 'Dismiss message');
+    closeBtn.onclick = () => dismissToast(el);
+    el.appendChild(closeBtn);
+    setTimeout(() => { if (document.body.contains(el)) dismissToast(el); }, 4500);
+});
+
+/* ════════════════════════════════════════════════
+   KEYBOARD SHORTCUTS + SCROLL SHADOW
+════════════════════════════════════════════════ */
+document.addEventListener('keydown', e => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+    }
+});
+const filterZoneEl = document.querySelector('.filter-zone');
+window.addEventListener('scroll', () => {
+    if (filterZoneEl) filterZoneEl.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ════════════════════════════════════════════════
+   ADMIN KEBAB MENU
+════════════════════════════════════════════════ */
+function toggleKebab(btn) {
+    const menu = btn.nextElementSibling;
+    const isOpen = menu.classList.contains('open');
+    
+    // Close all open menus and reset all card z-indexes
+    document.querySelectorAll('.kebab-menu.open').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.kebab-btn[aria-expanded="true"]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    document.querySelectorAll('.resource-item').forEach(item => item.style.zIndex = '');
+
+    if (!isOpen) {
+        menu.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        
+        // Bring the active card to the absolute front so the menu overlaps cards below it
+        const parentCard = btn.closest('.resource-item');
+        if (parentCard) {
+            parentCard.style.zIndex = '100';
+        }
+    }
+}
+
+async function shareResource(button) {
+    const title = button.dataset.title || 'MauryaHub resource';
+    const url = button.dataset.shareUrl || window.location.href;
+    try {
+        if (navigator.share) {
+            await navigator.share({ title, text: `Check out: ${title}`, url });
+        } else if (navigator.clipboard) {
+            await navigator.clipboard.writeText(url);
+            const originalTitle = button.title;
+            button.classList.add('shared');
+            button.title = 'Link copied';
+            setTimeout(() => {
+                if (button.isConnected) {
+                    button.classList.remove('shared');
+                    button.title = originalTitle;
+                }
+            }, 1600);
+        } else {
+            window.prompt('Copy this resource link:', url);
+        }
+    } catch (error) {
+        if (error && error.name !== 'AbortError') console.warn('Could not share resource:', error);
+    }
+}
+
+document.addEventListener('click', e => {
+    if (!e.target.closest('.actions-more')) {
+        document.querySelectorAll('.kebab-menu.open').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.kebab-btn[aria-expanded="true"]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.resource-item').forEach(item => item.style.zIndex = '');
+    }
+});
+
+/* ════════════════════════════════════════════════
+   PREVIEW MODAL
+════════════════════════════════════════════════ */
+const previewModal = document.getElementById('previewModal');
+const contributorsModal = document.getElementById('contributorsModal');
+const topContributorsButton = document.getElementById('topContributorsButton');
+const previewFrame = document.getElementById('previewFrame');
+const previewTitle = document.getElementById('previewTitle');
+let feedbackResourceId = null;
+let feedbackRating = null;
+let feedbackHelpful = null;
+let feedbackReviewTags = [];
+let feedbackSaved = false;
+let feedbackEditing = false;
+
+function setFeedbackFormEditable(editable) {
+    feedbackEditing = editable;
+    document.querySelectorAll('#feedbackStars button, #feedbackStrip button[data-helpfulness], [data-review-tag]').forEach(btn => {
+        btn.disabled = !editable;
+    });
+    document.getElementById('feedbackReview').disabled = !editable;
+    document.getElementById('feedbackSubmitButton').style.display = editable ? '' : 'none';
+    document.getElementById('feedbackEditButton').style.display = editable ? 'none' : '';
+    document.getElementById('feedbackSubmitButton').textContent = editable && feedbackSaved ? 'Update feedback' : 'Submit';
+}
+
+function openContributors() {
+    resetContributorResources();
+    contributorsModal.classList.add('active');
+    contributorsModal.setAttribute('aria-hidden', 'false');
+    contributorsModal.querySelector('.preview-close').focus();
+}
+
+function closeContributors() {
+    resetContributorResources();
+    contributorsModal.classList.remove('active');
+    contributorsModal.setAttribute('aria-hidden', 'true');
+    topContributorsButton.focus();
+}
+
+const contributorList = contributorsModal.querySelector('.top-contributors-list');
+const contributorHeading = contributorsModal.querySelector('.top-contributors-heading');
+const contributorResources = document.getElementById('contributorResources');
+
+function resetContributorResources() {
+    document.getElementById('top-contributors-title').textContent = 'Top Contributors';
+    contributorHeading.style.display = '';
+    if (contributorList) contributorList.style.display = '';
+    contributorResources.style.display = 'none';
+    contributorResources.innerHTML = '';
+}
+
+async function openContributorResources(button) {
+    const username = button.dataset.username || '';
+    contributorsModal.classList.add('active');
+    contributorsModal.setAttribute('aria-hidden', 'false');
+    document.getElementById('top-contributors-title').textContent = `${username}'s Contributions`;
+    contributorHeading.style.display = 'none';
+    if (contributorList) contributorList.style.display = 'none';
+    contributorResources.style.display = 'block';
+    contributorResources.innerHTML = '<p class="top-contributors-empty">Loading contributions...</p>';
+    try {
+        const response = await fetch(`/api/contributors/${encodeURIComponent(username)}/resources`);
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Request failed');
+        if (!data.resources.length) {
+            contributorResources.innerHTML = '<p class="top-contributors-empty">No published contributions found.</p>';
+            return;
+        }
+        contributorResources.innerHTML = `
+            <p class="top-contributors-empty">${data.resources.length} published contribution${data.resources.length === 1 ? '' : 's'}</p>
+            <ul class="contributor-resource-list">
+                ${data.resources.map(resource => `
+                    <li>
+                        <div><strong>${escapeHtml(resource.title)}</strong><small>${escapeHtml(resource.program)} · ${escapeHtml(resource.subject)}</small></div>
+                        <span><a href="${resource.open_url}" target="_blank">Open</a><a href="${resource.download_url}">Download</a></span>
+                    </li>`).join('')}
+            </ul>`;
+    } catch (error) {
+        contributorResources.innerHTML = '<p class="top-contributors-empty">Could not load contributions.</p>';
+    }
+    contributorsModal.querySelector('.preview-close').focus();
+}
+
+contributorsModal.addEventListener('click', e => {
+    if (e.target === contributorsModal) closeContributors();
+});
+
+function editFeedback() {
+    setFeedbackFormEditable(true);
+    document.getElementById('feedbackMessage').textContent = '';
+}
+
+function fillExistingFeedback(mine) {
+    if (!mine) {
+        setFeedbackFormEditable(true);
+        return;
+    }
+    feedbackRating = mine.rating;
+    feedbackHelpful = mine.helpfulness;
+    feedbackReviewTags = Array.isArray(mine.tags) ? mine.tags : [];
+    document.getElementById('feedbackReview').value = mine.review || '';
+    document.querySelectorAll('#feedbackStars button').forEach(btn => btn.classList.toggle('selected', Number(btn.dataset.rating) <= Number(feedbackRating || 0)));
+    document.querySelectorAll('#feedbackStrip button[data-helpfulness]').forEach(btn => btn.classList.toggle('selected', String(feedbackHelpful) === btn.dataset.helpfulness));
+    document.querySelectorAll('[data-review-tag]').forEach(btn => btn.classList.toggle('selected', feedbackReviewTags.includes(btn.dataset.reviewTag)));
+    setFeedbackFormEditable(false);
+}
+
+function renderRecentReviews(data) {
+    const target = document.getElementById('recentReviews');
+    target.innerHTML = data.reviews && data.reviews.length
+        ? '<strong>Recent reviews</strong>' + data.reviews.map(item => {
+            const voteLabel = item.viewerHelpful ? '👎 Remove vote' : '👍 Helpful';
+            const votedClass = item.viewerHelpful ? ' voted' : '';
+            return `<div class="recent-review">"${escapeHtml(item.review)}"${item.tags && item.tags.length ? ` · ${item.tags.map(escapeHtml).join(', ')}` : ''}${item.date ? ` · ${item.date}` : ''} <button type="button" class="review-helpful${votedClass}" onclick="toggleReviewHelpful(${Number(item.id)}, this)">${voteLabel} · ${Number(item.helpfulCount || 0)}</button></div>`;
+        }).join('')
+        : '';
+}
+
+function openPreview(link, title, resourceId) {
+    if (!link) return;
+    previewTitle.textContent = title || 'Preview';
+    previewFrame.src = link;
+    feedbackResourceId = resourceId || null;
+    feedbackRating = null;
+    feedbackHelpful = null;
+    feedbackReviewTags = [];
+    feedbackSaved = false;
+    feedbackEditing = false;
+    document.querySelectorAll('#feedbackStars button, #feedbackStrip button[data-helpfulness]').forEach(btn => btn.classList.remove('selected'));
+    document.querySelectorAll('[data-review-tag]').forEach(btn => btn.classList.remove('selected'));
+    document.getElementById('feedbackReview').value = '';
+    document.getElementById('feedbackSubmitButton').textContent = 'Submit';
+    document.getElementById('feedbackSubmitButton').style.display = '';
+    document.getElementById('feedbackEditButton').style.display = 'none';
+    document.getElementById('feedbackMessage').textContent = '';
+    document.getElementById('reportMessage').textContent = '';
+    document.getElementById('reportIssue').style.display = 'none';
+    document.getElementById('reportDetails').style.display = 'none';
+    document.getElementById('reportSubmit').style.display = 'none';
+    document.getElementById('recentReviews').textContent = 'Loading reviews…';
+    previewModal.classList.remove('feedback-only');
+    previewFrame.style.display = '';
+    previewModal.classList.add('active');
+    previewModal.setAttribute('aria-hidden', 'false');
+    fetch(`/api/general-resources/${resourceId}/reviews`)
+        .then(response => response.json())
+        .then(data => {
+            renderRecentReviews(data);
+            fillExistingFeedback(data.mine);
+        })
+        .catch(() => { document.getElementById('recentReviews').textContent = ''; });
+}
+function openFeedbackAfterOpen(link) {
+    if (!link) return;
+    openFeedbackFromCard(link);
+}
+function openFeedbackFromCard(button) {
+    if (!button) return;
+    openPreview('about:blank', button.dataset.title || 'Rate resource', button.dataset.resourceId);
+    previewModal.classList.add('feedback-only');
+    previewFrame.style.display = 'none';
+}
+function closePreview() {
+    const shouldRefresh = feedbackSaved;
+    previewModal.classList.remove('active');
+    previewModal.setAttribute('aria-hidden', 'true');
+    previewFrame.src = '';
+    previewModal.classList.remove('feedback-only');
+    previewFrame.style.display = '';
+    if (shouldRefresh) {
+        saveResourceViewState();
+        window.location.reload();
+    }
+}
+previewModal.addEventListener('click', e => { if (e.target === previewModal) closePreview(); });
+document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (contributorsModal.classList.contains('active')) closeContributors();
+    else closePreview();
+});
+
+function selectResourceRating(value) {
+    feedbackRating = value;
+    document.querySelectorAll('#feedbackStars button').forEach(btn => btn.classList.toggle('selected', Number(btn.dataset.rating) <= value));
+}
+function selectResourceHelpful(value) {
+    feedbackHelpful = value;
+    document.querySelectorAll('#feedbackStrip button[data-helpfulness]').forEach(btn => btn.classList.toggle('selected', String(value) === btn.dataset.helpfulness));
+}
+function toggleReviewTag(button) {
+    const tag = button.dataset.reviewTag;
+    if (feedbackReviewTags.includes(tag)) {
+        feedbackReviewTags = feedbackReviewTags.filter(item => item !== tag);
+        button.classList.remove('selected');
+    } else {
+        feedbackReviewTags.push(tag);
+        button.classList.add('selected');
+    }
+}
+function submitResourceFeedback() {
+    const review = document.getElementById('feedbackReview').value.trim();
+    if (!feedbackResourceId || (!feedbackRating && feedbackHelpful === null && !review)) {
+        document.getElementById('feedbackMessage').textContent = 'Choose a rating, helpful vote, or write a review.';
+        return;
+    }
+    fetch(`/api/general-resources/${feedbackResourceId}/feedback`, {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({rating: feedbackRating, helpfulness: feedbackHelpful, review: review, review_tags: feedbackReviewTags})
+    }).then(async response => ({ok: response.ok, data: await response.json()}))
+      .then(({ok, data}) => {
+          document.getElementById('feedbackMessage').textContent = data.message || data.error || '';
+          if (ok) {
+              feedbackSaved = true;
+              document.getElementById('feedbackMessage').textContent = 'Feedback saved. You can edit it anytime.';
+              setFeedbackFormEditable(false);
+          }
+      }).catch(() => { document.getElementById('feedbackMessage').textContent = 'Could not save feedback.'; });
+}
+
+function toggleReviewHelpful(reviewId, button) {
+    fetch(`/api/general-resources/${feedbackResourceId}/reviews/${reviewId}/helpful`, {
+        method: 'POST', headers: {'Content-Type': 'application/json'}
+    }).then(async response => ({ok: response.ok, data: await response.json()}))
+      .then(({ok, data}) => {
+          if (!ok) return;
+          button.classList.toggle('voted', !!data.viewerHelpful);
+          button.textContent = `${data.viewerHelpful ? '👎 Remove vote' : '👍 Helpful'} · ${Number(data.helpfulCount || 0)}`;
+      }).catch(() => {});
+}
+
+function toggleReportForm() {
+    const visible = document.getElementById('reportIssue').style.display !== 'none';
+    ['reportIssue', 'reportDetails', 'reportSubmit'].forEach(id => {
+        document.getElementById(id).style.display = visible ? 'none' : '';
+    });
+}
+
+function submitResourceReport() {
+    const issueType = document.getElementById('reportIssue').value;
+    const details = document.getElementById('reportDetails').value.trim();
+    if (!issueType) {
+        document.getElementById('reportMessage').textContent = 'Choose an issue first.';
+        return;
+    }
+    fetch(`/api/general-resources/${feedbackResourceId}/report`, {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({issue_type: issueType, details: details})
+    }).then(async response => ({ok: response.ok, data: await response.json()}))
+      .then(({data}) => {
+          document.getElementById('reportMessage').textContent = data.message || data.error || '';
+      }).catch(() => { document.getElementById('reportMessage').textContent = 'Could not send report.'; });
+}
+
+function escapeHtml(value) {
+    return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+window.addEventListener('resize', () => {
+    renderPage('diploma');
+    renderPage('degree');
+});
+
+function refreshSubjectOptions(program) {
+    const list = subjectsByProgram[program] || [];
+    let options = '<option value="">All subjects</option>';
+    if (hasUnassigned[program]) {
+        options += '<option value="__unassigned">Unassigned</option>';
+    }
+    options += list.map(item => `<option value="${item.id}">${item.name}</option>`).join('');
+    subjectFilter.innerHTML = options;
+    subjectFilter.value = '';
+}
+
+function renderSubjectGrid(program) {
+    const grid = document.getElementById('subject-grid-' + program);
+    if (!grid) return;
+    const list = subjectsByProgram[program] || [];
+    const items = [];
+    items.push({ id: '', name: 'All Subjects' });
+    if (hasUnassigned[program]) {
+        items.push({ id: '__unassigned', name: 'Unassigned' });
+    }
+    list.forEach(item => items.push(item));
+    grid.innerHTML = items.map(item => {
+        const isActive = subjectFilter.value === String(item.id);
+        return `
+            <div class="subject-card${isActive ? ' active' : ''}" data-subject="${item.id}" data-subject-name="${escapeHtml(item.name)}">
+                <span>${item.name}</span>
+                <small>${isActive ? '●' : '▾'}</small>
+                <button class="subject-share-button" type="button" title="Share ${escapeHtml(item.name)}" aria-label="Share ${escapeHtml(item.name)}">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/></svg>
+                </button>
+            </div>
+        `;
+    }).join('');
+    grid.querySelectorAll('.subject-card').forEach(card => {
+        card.addEventListener('click', () => {
+            subjectFilter.value = card.getAttribute('data-subject') || '';
+            applyFilters();
+            renderSubjectGrid(program);
+        });
+        card.querySelector('.subject-share-button').addEventListener('click', event => {
+            event.stopPropagation();
+            shareSubject(card.dataset.subject, program, card.dataset.subjectName);
+        });
+    });
+}
+
+async function shareSubject(subjectId, program, subjectName) {
+    const url = new URL(window.location.href);
+    url.pathname = '{{ url_for("general_resources_page") }}';
+    url.search = '';
+    url.searchParams.set('program', program);
+    if (subjectId) url.searchParams.set('subject_id', subjectId);
+    const title = subjectId ? `${subjectName} resources` : `${program} resources`;
+    try {
+        if (navigator.share) {
+            await navigator.share({ title, text: `Check out ${title}`, url: url.toString() });
+        } else if (navigator.clipboard) {
+            await navigator.clipboard.writeText(url.toString());
+            window.alert('Subject link copied.');
+        } else {
+            window.prompt('Copy this subject link:', url.toString());
+        }
+    } catch (error) {
+        if (error && error.name !== 'AbortError') console.warn('Could not share subject:', error);
+    }
+}
+
+const resourceThemeToggle = document.getElementById('resourceThemeToggle');
+if (localStorage.getItem('general-resources-theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+}
+function updateResourceThemeButton() {
+    const dark = document.body.classList.contains('dark-theme');
+    resourceThemeToggle.textContent = dark ? '☀️ Light mode' : '🌙 Dark mode';
+    resourceThemeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+}
+updateResourceThemeButton();
+resourceThemeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    localStorage.setItem('general-resources-theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    updateResourceThemeButton();
+});
+</script>
+</body>
+</html>
