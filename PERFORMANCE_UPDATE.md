@@ -48,7 +48,7 @@ improvement have not been measured or guaranteed.
 ## Validation completed offline
 
 Run `python -m unittest discover -s tests -v` with requirements.txt installed.
-There are 14 regression checks covering cache expiry/bounds, concurrency,
+There are 15 regression checks covering cache expiry/bounds, concurrency,
 invalidation, retry after failure, resource IDs/links and all sort modes, exact
 view writes, private reports, static requests, and cached public endpoints.
 

@@ -138,15 +138,42 @@ def contributor_name_similarity(username, title):
     return max(SequenceMatcher(None, normalized_username, candidate).ratio() for candidate in candidates)
 
 def match_contributor_from_title(title, usernames):
-    matches = [
-        (contributor_name_similarity(username, title), username)
-        for username in usernames
-        if username
-    ]
-    if not matches:
+    """Preserve legacy attribution while avoiding unnecessary fuzzy comparisons."""
+    normalized_title = normalize_contributor_name(title)
+    if not normalized_title:
         return None
-    score, username = max(matches, key=lambda item: (item[0], len(normalize_contributor_name(item[1]))))
-    return username if score >= 0.5 else None
+    names = [(username, normalize_contributor_name(username))
+             for username in usernames if username]
+
+    # An exact substring already has the maximum possible score of 1.0.
+    # Preserve the old longest-name tie break and first equal-length winner.
+    exact = [(username, normalized) for username, normalized in names
+             if normalized and normalized in normalized_title]
+    if exact:
+        return max(exact, key=lambda item: len(item[1]))[0]
+
+    # Build title windows once per title, rather than once for every username.
+    words = re.findall(r'[a-z0-9]+', (title or '').lower())
+    candidates = [normalized_title]
+    for start in range(len(words)):
+        for end in range(start + 1, min(len(words), start + 4) + 1):
+            candidates.append(normalize_contributor_name(' '.join(words[start:end])))
+    candidates = list(dict.fromkeys(candidates))
+
+    best_score, best_length, best_username = 0.5, 0, None
+    for username, normalized in names:
+        if not normalized:
+            continue
+        for candidate in candidates:
+            matcher = SequenceMatcher(None, normalized, candidate)
+            # These are upper bounds on ratio(), so pruning cannot discard a
+            # score that would beat or tie the current winner.
+            if matcher.real_quick_ratio() < best_score or matcher.quick_ratio() < best_score:
+                continue
+            score = matcher.ratio()
+            if (score, len(normalized)) > (best_score, best_length):
+                best_score, best_length, best_username = score, len(normalized), username
+    return best_username
 
 def uploaded_file_size(file_storage):
     if not file_storage or not getattr(file_storage, 'stream', None):

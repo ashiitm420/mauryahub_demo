@@ -258,6 +258,22 @@ class AppTests(unittest.TestCase):
         self.assertNotIn(b'PRIVATE_REPORT_MARKER', guest.data)
         self.assertNotIn(b'admin only', guest.data)
 
+    def test_contributor_matching_preserves_legacy_scores_and_ties(self):
+        cases = [
+            ('notes by Ann Marie', ['Ann', 'Ann Marie'], 'Ann Marie'),
+            ('ab cd', ['abc', 'AbC'], 'abc'),
+            ('guide', ['!!!', ''], None),
+            ('aaaa', ['aaa', 'aaaa'], 'aaaa'),
+            ('abc', ['abd', 'abe'], 'abd'),
+            ('abcd', ['abce', 'abcdx'], 'abcdx'),
+            ('xyz', ['abc'], None),
+            ('', ['Alice'], None),
+            ('DL | Code-Synth', ['Code Synth'], 'Code Synth'),
+        ]
+        for title, usernames, expected in cases:
+            with self.subTest(title=title, usernames=usernames):
+                self.assertEqual(self.module.match_contributor_from_title(title, usernames), expected)
+
     def test_production_startup_skips_database_and_storage_migrations(self):
         tree = ast.parse((ROOT / 'app.py').read_text())
         startup = tree.body[-1]

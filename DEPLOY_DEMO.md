@@ -41,7 +41,7 @@ making changes through either site. Repo snapshots are not a production backup.
 
 python -m unittest discover -s tests -v
 
-14 offline regression checks cover caching and resource preservation. Warm public
+15 offline regression checks cover caching and resource preservation. Warm public
 reads use a two-minute in-memory cache; account checks and private reports remain
 uncached. Changes across workers/direct DB edits may take up to two minutes to
 appear. No production latency percentage is guaranteed before measurement.
